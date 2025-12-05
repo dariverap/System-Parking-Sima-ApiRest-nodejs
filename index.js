@@ -18,10 +18,10 @@ const PUERTO = process.env.PORT || 3306;
 
 // Definimos el pool de conexiones correctamente
 const pool = mysql.createPool({
-    host: 'bzcshl1sodk5akovfrpd-mysql.services.clever-cloud.com',
-    database: 'bzcshl1sodk5akovfrpd',
-    user: 'uvbvtkfpsz4rmfaq',
-    password: 'YWBSv09RCqw4mkA64OAi',
+    host: process.env.DB_HOST,
+    database: process.env.DB_NAME,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
     connectionLimit: 10,  // Número máximo de conexiones en el pool
     waitForConnections: true,
     queueLimit: 0
